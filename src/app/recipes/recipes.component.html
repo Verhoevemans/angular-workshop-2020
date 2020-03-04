@@ -1,0 +1,18 @@
+<h3>Here you see a list of all the recipes</h3>
+<div class="list-group">
+  <div class="list-group-item" *ngFor="let recipe of recipes">
+    <h4>{{ recipe.name }}</h4>
+    <div class="row">
+      <div class="col-sm-8">
+        <span *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.name }}: {{ ingredient.amount }}
+        </span>
+      </div>
+      <div class="col-sm-4">
+        <button type="button" (click)="addIngredients(recipe.ingredients)" class="btn btn-link">
+          Add ingredients to list
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
